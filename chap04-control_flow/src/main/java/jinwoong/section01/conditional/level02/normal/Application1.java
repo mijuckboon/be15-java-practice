@@ -13,7 +13,7 @@ public class Application1 {
         int num = sc.nextInt();
 
         String message;
-        if (num < 0 || num > 10) {
+        if (num < 1 || num > 10) {
             message = "반드시 1~10 사이의 정수를 입력해야 합니다.";
         } else {
             if (num % 2 == 0) {
