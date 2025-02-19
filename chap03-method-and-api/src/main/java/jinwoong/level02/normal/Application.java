@@ -1,6 +1,4 @@
-package com.greedy.level02.normal;
-
-import com.greedy.level02.normal.RandomMaker;
+package jinwoong.level02.normal;
 
 public class Application {
     public static void main(String[] args) {

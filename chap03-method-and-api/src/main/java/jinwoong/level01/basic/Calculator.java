@@ -1,4 +1,4 @@
-package com.greedy.level01.basic;
+package jinwoong.level01.basic;
 
 public class Calculator {
     public void checkMethod(){ String message = "메소드 호출 확인";

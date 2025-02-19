@@ -1,4 +1,4 @@
-package com.greedy.level02.normal;
+package jinwoong.level02.normal;
 
 public class RandomMaker {
     public static int randomNumber(int min, int max) {

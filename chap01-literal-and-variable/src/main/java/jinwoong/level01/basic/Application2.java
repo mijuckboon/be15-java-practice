@@ -1,4 +1,4 @@
-package com.ohgiraffers.level01.basic;
+package jinwoong.level01.basic;
 
 public class Application2 {
     /* 사각형의 넓이와 둘레를 구하는 문제이다.

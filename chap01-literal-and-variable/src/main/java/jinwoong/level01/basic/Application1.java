@@ -1,4 +1,4 @@
-package com.ohgiraffers.level01.basic;
+package jinwoong.level01.basic;
 
 public class Application1 {
     /* 정수형 변수 2개를 선언하여  각 20과 30으로 초기화 한 후

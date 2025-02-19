@@ -1,4 +1,4 @@
-package com.ohgiraffers.level02.normal;
+package jinwoong.level02.normal;
 
 public class Application1 {
     /* 문자형 변수를 하나 선언 후 'a'를 대입한 후
