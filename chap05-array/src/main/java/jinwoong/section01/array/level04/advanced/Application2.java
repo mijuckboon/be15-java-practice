@@ -106,14 +106,14 @@ public class Application2 {
 
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
-            if (input.length() != 4) {
+            if (input.length() != LENGTH) {
                 System.out.println(INVALID_INPUT_MESSAGE);
                 continue;
             }
             int[] submitted = convertToArray(input);
             int[] result = checkResult(generated, submitted);
 
-            if (result[0] == 4) {
+            if (result[0] == LENGTH) {
                 System.out.println(SUCCESS_MESSAGE);
                 break;
             } else {
