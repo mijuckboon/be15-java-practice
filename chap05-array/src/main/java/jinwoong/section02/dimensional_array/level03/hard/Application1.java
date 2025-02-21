@@ -1,4 +1,4 @@
-package jinwoong.section02.dimensional.level03.hard;
+package jinwoong.section02.dimensional_array.level03.hard;
 
 import java.util.Random;
 import java.util.Scanner;
