@@ -14,25 +14,22 @@ public class Application {
         // 최대 10명의 학생 정보를 기록할 수 있게 배열을 할당한다.
         StudentDTO[] students = new StudentDTO[MAX_DATA];
 
-        // while문을 사용하여 학생들의 정보를 계속 입력 받고
         final Scanner sc = new Scanner(System.in);
         int cnt = 0;
+
         program:
         while (true) {
+            // while문을 사용하여 학생들의 정보를 계속 입력 받고
             String[] inputs = new String[INPUT_MESSAGES.length];
             for (int i = 0; i < INPUT_MESSAGES.length; i++) {
                 System.out.print(INPUT_MESSAGES[i]);
                 inputs[i] = sc.nextLine();
             }
-            // 한 명씩 추가 될 때마다 카운트함
             students[cnt] = insertStudent(inputs);
+            // 한 명씩 추가 될 때마다 카운트함
             cnt += 1;
 
-            if (cnt == MAX_DATA) {
-                for (int i = 0; i < cnt; i++) { // 아래 내용 중복되므로 메서드 분리 해주는 게 좋을 듯함
-                    StudentDTO student = students[i];
-                    System.out.println(student.getInformation() + ", 평균=" + getAverage(student));
-                }
+            if (cnt >= MAX_DATA) {
                 break program;
             }
 
@@ -42,29 +39,27 @@ public class Application {
                 String input = sc.nextLine();
                 if (!input.matches("[yYnN]")) {
                     System.out.println(INVALID_INPUT_MESSAGE);
-                    continue;
                 } else {
                     // 대소문자 상관없이 ‘y’이면 계속 객체 추가
                     if (input.matches("[yY]")) {
                         continue program;
                     } else {
-                        // 학생들의 정보를 모두 출력 (평균 포함)
-                        for (int i = 0; i < cnt; i++) { // 향상된 for 문 사용 시 NullPointerException 발생
-                            // 현재 기록된 학생들의 각각의 점수 평균을 구함
-                            StudentDTO student = students[i];
-                            System.out.println(student.getInformation() + ", 평균=" + getAverage(student));
-                        }
                         break program;
                     }
                 }
 
             }
 
-
+        }
+        for (int i = 0; i < cnt; i++) { // 향상된 for 문 사용 시 NullPointerException 발생
+            // 3명 정도의 학생 정보를 입력 받아 각 객체에 저장함
+            StudentDTO student = students[i];
+            // 현재 기록된 학생들의 각각의 점수 평균을 구함
+            int average = getAverage(student);
+            // 학생들의 정보를 모두 출력 (평균 포함)
+            System.out.println(student.getInformation() + ", 평균=" + average);
         }
 
-
-        // 3명 정도의 학생 정보를 입력 받아 각 객체에 저장함
     }
     public static int convert(String str) {
         return Integer.parseInt(str);
