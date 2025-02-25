@@ -2,6 +2,9 @@ package jinwoong.level01.basic;
 
 public class Application {
     public static void main(String[] args) {
+        /* 강사님 코드와 넓이 결과가 다르게 나오는 이유
+         * 강사님: 0.5를 곱함 (0.5 * base * height)
+         * 본인: 2로 나눔     (base * height / 2) */
         ShapeManager manager = new ShapeManager();
 
         /* 반지름(radius) 이 5인 Circle 객체 생성 */
