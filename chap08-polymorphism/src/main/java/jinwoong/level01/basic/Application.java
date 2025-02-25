@@ -4,7 +4,8 @@ public class Application {
     public static void main(String[] args) {
         /* 강사님 코드와 넓이 결과가 다르게 나오는 이유
          * 강사님: 0.5를 곱함 (0.5 * base * height)
-         * 본인: 2로 나눔     (base * height / 2) */
+         * 본인: 2로 나눔     (base * height / 2)
+         * 소수를 직접 사칙연산하면 오차 발생 가능성이 높으므로, 나누는 쪽이 정확성 측면에서 더 좋음 */
         ShapeManager manager = new ShapeManager();
 
         /* 반지름(radius) 이 5인 Circle 객체 생성 */
