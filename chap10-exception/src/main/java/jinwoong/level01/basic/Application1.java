@@ -52,7 +52,7 @@ public class Application1 {
             }
             double result = app.divide(numerator,denominator);
             System.out.printf(RESULT, result);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) { // InputMismatchException
             System.out.printf(ERROR, INVALID_INPUT);
         } catch (ArithmeticException e) {
             System.out.printf(ERROR, e.getMessage());
