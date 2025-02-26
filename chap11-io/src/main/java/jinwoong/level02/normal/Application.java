@@ -26,14 +26,23 @@ public class Application {
     static final String NAME_OF_MERGED_FILE = "병합 될 파일명";
     static final String COMPLETED = "파일 병합이 완료되었습니다.";
     static final String INVALID_INPUT = "오류 : %s (지정된 파일을 찾을 수 없습니다)";
+    static final String INVALID_FILE_NUMBER = NUMBER_OF_FILES + "는 2 이상이어야 합니다.";
 
     static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = null;
         BufferedWriter bw = null;
-
-        int numberOfFiles = Integer.parseInt(getInput(INPUT_MESSAGE.formatted(NUMBER_OF_FILES)));
+        int numberOfFiles;
+        try {
+            numberOfFiles = Integer.parseInt(getInput(INPUT_MESSAGE.formatted(NUMBER_OF_FILES)));
+            if (numberOfFiles < 2) {
+                throw new NumberFormatException(INVALID_FILE_NUMBER);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
 
         String[] fileNames = new String[numberOfFiles];
         for (int i = 1; i <= numberOfFiles; i++) {
@@ -59,7 +68,7 @@ public class Application {
                 }
             }
             br.close();
-            bw.write(sb.toString());
+            bw.write(sb.toString().trim());
             bw.close();
             System.out.println(COMPLETED);
         } catch (FileNotFoundException e) {
